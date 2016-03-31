@@ -16,6 +16,7 @@ export class DynamicForm {
   @Output() submit = new EventEmitter();
 
   form: ControlGroup;
+  public invalidError:boolean;
   public formData = '';
   constructor(private _qcs: QuestionControlService) {  }
 
@@ -25,6 +26,13 @@ export class DynamicForm {
 
   onSubmit() {
     this.formData = this.form.value;
+    /*setTimeout(() => { 
+      if(!this.invalidError){
+        console.log(this.form);
+        this.form = this._qcs.resetForm(this.questions);
+        console.log(this.form);
+      }
+    },10);*/
   }
 
 

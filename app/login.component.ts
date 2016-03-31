@@ -43,7 +43,13 @@ export class LoginComponent  implements OnInit{
 
   onSubmit(){
       setTimeout(() => {   
+        this.user==null;
         this.getUser(this._loginform.formData);
+        setTimeout(() => { 
+          if(this.user==null)this._loginform.invalidError=true;
+          else this._loginform.invalidError=false;          
+        },10);
+
       },1); 
       
       

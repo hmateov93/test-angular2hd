@@ -41,7 +41,14 @@ System.register(['angular2/core', './login-form/dynamic-form.component', './logi
                 LoginComponent.prototype.onSubmit = function () {
                     var _this = this;
                     setTimeout(function () {
+                        _this.user == null;
                         _this.getUser(_this._loginform.formData);
+                        setTimeout(function () {
+                            if (_this.user == null)
+                                _this._loginform.invalidError = true;
+                            else
+                                _this._loginform.invalidError = false;
+                        }, 10);
                     }, 1);
                 };
                 __decorate([

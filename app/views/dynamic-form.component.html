@@ -4,7 +4,10 @@
           <df-question [question]="question" [form]="form"></df-question>
         </div>
         <div class="form-row">
-          <button type="submit" [disabled]="!form.valid">Save</button>
+          <button type="submit" [disabled]="!form.valid">Log In</button>
+        </div>
+        <div class="form-row errorMessage" *ngIf="invalidError">
+            Username or password are invalid
         </div>
       </form>
       <div class="form-note">Fields that end with * are required</div>
