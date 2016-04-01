@@ -1,0 +1,14 @@
+    <div>
+      <form (ngSubmit)="onSubmit()" [ngFormModel]="form">
+        <div *ngFor="#question of questions" class="form-row">
+          <df-question [question]="question" [form]="form"></df-question>
+        </div>
+        <div class="form-row">
+          <button type="submit" [disabled]="!form.valid">Log In</button>
+        </div>
+        <div class="form-row errorMessage" *ngIf="invalidError">
+            Username or password are invalid
+        </div>
+      </form>
+      <div class="form-note">Fields that end with * are required</div>
+    </div>
