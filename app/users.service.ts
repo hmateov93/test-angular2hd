@@ -19,7 +19,7 @@ export class UsersService{
 
   public getUser(formData){ 
     return this.http.get(this._UsersUrl)
-                    .map(res => <User> res.json().data.filter(user => user.name === formData.username && user.password === formData.password)[0])
+                    .map(res => <User> res.json().data.filter(user => user.name === formData.username)[0])
                     .catch(this.handleError);
   }
 

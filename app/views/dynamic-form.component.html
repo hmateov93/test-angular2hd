@@ -6,9 +6,6 @@
         <div class="form-row">
           <button type="submit" [disabled]="!form.valid">Log In</button>
         </div>
-        <div class="form-row errorMessage" *ngIf="invalidError">
-            Username or password are invalid
-        </div>
       </form>
       <div class="form-note">Fields that end with * are required</div>
     </div>

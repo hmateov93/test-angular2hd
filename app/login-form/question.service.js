@@ -36,14 +36,16 @@ System.register(['angular2/core', './question-textbox', './question-password'], 
                             label: 'User Name',
                             value: '',
                             required: true,
-                            order: 1
+                            order: 1,
+                            errorMessage: "Invalid username"
                         }),
                         new question_password_1.PasswordQuestion({
                             key: 'password',
                             label: 'Password',
                             type: 'password',
                             required: true,
-                            order: 2
+                            order: 2,
+                            errorMessage: "Invalid password"
                         })
                     ];
                     return questions.sort(function (a, b) { return a.order - b.order; });

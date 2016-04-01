@@ -15,14 +15,16 @@ export class QuestionService {
         label:'User Name',
         value:'',
         required: true,
-        order: 1
+        order: 1,
+        errorMessage: "Invalid username"
       }),
       new PasswordQuestion({
         key:'password',
         label:'Password',
         type: 'password',
         required:true,
-        order: 2
+        order: 2,
+        errorMessage: "Invalid password"
       })
     ];
     return questions.sort((a,b) => a.order - b.order);

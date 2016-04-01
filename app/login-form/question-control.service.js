@@ -32,13 +32,6 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
                     });
                     return this._fb.group(group);
                 };
-                QuestionControlService.prototype.resetForm = function (questions) {
-                    var group = {};
-                    questions.forEach(function (question) {
-                        control[question.key] = question.required ? [question.value || '', common_1.Validators.required] : [];
-                    });
-                    return this._fb.group(group);
-                };
                 QuestionControlService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [common_1.FormBuilder])

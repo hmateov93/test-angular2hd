@@ -14,6 +14,8 @@ System.register([], function(exports_1, context_1) {
                     this.required = !!options.required;
                     this.order = options.order === undefined ? 1 : options.order;
                     this.controlType = options.controlType || '';
+                    this.error = options.error || false;
+                    this.errorMessage = options.errorMessage || "";
                 }
                 return QuestionBase;
             }());

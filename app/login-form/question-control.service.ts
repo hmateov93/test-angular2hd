@@ -15,12 +15,4 @@ export class QuestionControlService {
     return this._fb.group(group);
   }
 
-  resetForm(questions:QuestionBase<any>[] ){
-    let group = {};
-
-    questions.forEach(question => {
-      control[question.key] = question.required ? [question.value || '', Validators.required] : [];
-    });
-    return this._fb.group(group);  	
-  }
 }

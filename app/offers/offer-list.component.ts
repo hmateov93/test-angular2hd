@@ -27,7 +27,6 @@
       offers:Offer[];
 
       ngOnInit() {
-        alert("pasa por aqui");
         this.getOffers();
       }
 

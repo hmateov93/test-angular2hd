@@ -36,7 +36,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http'], function(
                 };
                 UsersService.prototype.getUser = function (formData) {
                     return this.http.get(this._UsersUrl)
-                        .map(function (res) { return res.json().data.filter(function (user) { return user.name === formData.username && user.password === formData.password; })[0]; })
+                        .map(function (res) { return res.json().data.filter(function (user) { return user.name === formData.username; })[0]; })
                         .catch(this.handleError);
                 };
                 UsersService.prototype.handleError = function (error) {

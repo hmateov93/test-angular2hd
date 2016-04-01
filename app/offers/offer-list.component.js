@@ -30,7 +30,6 @@ System.register(['angular2/core', 'angular2/router', './offer.service'], functio
                     this._router = _router;
                 }
                 OfferListComponent.prototype.ngOnInit = function () {
-                    alert("pasa por aqui");
                     this.getOffers();
                 };
                 /* Obtiene los datos guardados en el json */
