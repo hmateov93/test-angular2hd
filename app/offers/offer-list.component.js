@@ -45,8 +45,12 @@ System.register(['angular2/core', 'angular2/router', './offer.service'], functio
                     core_1.Component({
                         selector: 'offer-list',
                         template: "\n      <h3>Ofertas :</h3>\n      <ul>\n        <li *ngFor=\"#offer of offers\" (click)=\"onSelect(offer)\">\n          {{ offer.description }}\n        </li>\n      </ul>\n      <div class=\"error\" *ngIf=\"errorMessage\">{{errorMessage}}</div>\n      ",
+<<<<<<< HEAD
                         styles: ['.error {color:red;}'],
                         providers: [offer_service_1.OfferService]
+=======
+                        styles: ['.error {color:red;}']
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
                     }), 
                     __metadata('design:paramtypes', [offer_service_1.OfferService, router_1.Router])
                 ], OfferListComponent);

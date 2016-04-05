@@ -34,7 +34,11 @@ System.register(['angular2/core', 'angular2/router', './offer.service'], functio
                 OfferDetailComponent.prototype.setOffer = function () {
                     var _this = this;
                     var id = this._routeParams.get('id');
+<<<<<<< HEAD
                     this._offerService.getOffer(id).subscribe(function (offer) { return _this.offer = offer; });
+=======
+                    this._offerService.getOffer(id).then(function (offer) { return _this.offer = offer; });
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
                 };
                 OfferDetailComponent.prototype.ngOnInit = function () {
                     this.setOffer();
@@ -45,9 +49,15 @@ System.register(['angular2/core', 'angular2/router', './offer.service'], functio
                 OfferDetailComponent = __decorate([
                     core_1.Component({
                         selector: 'my-offer-detail',
+<<<<<<< HEAD
                         templateUrl: "app/views/offer-detail.component.html",
                         style: "",
                         providers: [offer_service_1.OfferService]
+=======
+                        /*templateUrl: '',*/
+                        template: "<p>Detalle de la oferta </p><p>{{offer.id}}</p> <button (click)='goBack()'>Back",
+                        style: ""
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, offer_service_1.OfferService])
                 ], OfferDetailComponent);

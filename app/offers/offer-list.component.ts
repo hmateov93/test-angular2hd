@@ -16,8 +16,13 @@
       </ul>
       <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
       `,
+<<<<<<< HEAD
       styles: ['.error {color:red;}'],
       providers: [OfferService]
+=======
+      styles: ['.error {color:red;}']
+      /*providers: [OfferService]*/
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
     })
 
 
@@ -32,6 +37,10 @@
 
       /* Obtiene los datos guardados en el json */
       getOffers() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
         this._offerService.getOffers()
                          .subscribe(
                            offers => this.offers = offers,
@@ -42,4 +51,8 @@
         this._router.navigate( ['OfferDetail', { id: offer.id }] );
       }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
     }

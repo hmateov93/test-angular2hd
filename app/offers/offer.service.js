@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(exports_1, context_1) {
+=======
+System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', './offer'], function(exports_1, context_1) {
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +14,11 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
+<<<<<<< HEAD
     var core_1, http_1, Observable_1;
+=======
+    var core_1, http_1, Observable_1, offer_1;
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
     var OfferService;
     return {
         setters:[
@@ -22,12 +30,22 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
             },
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
+<<<<<<< HEAD
+=======
+            },
+            function (offer_1_1) {
+                offer_1 = offer_1_1;
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
             }],
         execute: function() {
             OfferService = (function () {
                 function OfferService(http) {
                     this.http = http;
+<<<<<<< HEAD
                     this._offersUrl = 'app/json/offers.json';
+=======
+                    this._offersUrl = 'app/offers.json';
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
                 }
                 OfferService.prototype.getOffers = function () {
                     return this.http.get(this._offersUrl)
@@ -35,9 +53,15 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                         .catch(this.handleError);
                 };
                 OfferService.prototype.getOffer = function (id) {
+<<<<<<< HEAD
                     return this.http.get(this._offersUrl)
                         .map(function (res) { return res.json().data.filter(function (offer) { return offer.id === id; })[0]; })
                         .catch(this.handleError);
+=======
+                    pruebaOffer: offer_1.Offer = {};
+                    pruebaOffer = this.getOffers.filter(function (offer) { return offer.id === id; });
+                    return pruebaOffer;
+>>>>>>> 8687e47428915832d4e6ecd641efa02162f8189d
                 };
                 OfferService.prototype.handleError = function (error) {
                     console.error(error);
