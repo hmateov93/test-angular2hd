@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', './offer.service'], functio
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, offer_service_1;
-    var OfferListComponent;
+    var OfferDetailComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,36 +24,37 @@ System.register(['angular2/core', 'angular2/router', './offer.service'], functio
                 offer_service_1 = offer_service_1_1;
             }],
         execute: function() {
-            OfferListComponent = (function () {
-                function OfferListComponent(_offerService, _router) {
-                    this._offerService = _offerService;
+            OfferDetailComponent = (function () {
+                function OfferDetailComponent(_router, _routeParams, _offerService) {
                     this._router = _router;
+                    this._routeParams = _routeParams;
+                    this._offerService = _offerService;
+                    this.offer = {};
                 }
-                OfferListComponent.prototype.ngOnInit = function () {
-                    this.getOffers();
-                };
-                /* Obtiene los datos guardados en el json */
-                OfferListComponent.prototype.getOffers = function () {
+                OfferDetailComponent.prototype.setOffer = function () {
                     var _this = this;
-                    this._offerService.getOffers()
-                        .subscribe(function (offers) { return _this.offers = offers; }, function (error) { return _this.errorMessage = error; });
+                    var id = this._routeParams.get('id');
+                    this._offerService.getOffer(id).subscribe(function (offer) { return _this.offer = offer; });
                 };
-                OfferListComponent.prototype.onSelect = function (offer) {
-                    this._router.navigate(['OfferDetail', { id: offer.id }]);
+                OfferDetailComponent.prototype.ngOnInit = function () {
+                    this.setOffer();
                 };
-                OfferListComponent = __decorate([
+                OfferDetailComponent.prototype.goBack = function () {
+                    this._router.navigate(['Offers']);
+                };
+                OfferDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'offer-list',
-                        template: "\n      <h3>Ofertas :</h3>\n      <ul>\n        <li *ngFor=\"#offer of offers\" (click)=\"onSelect(offer)\">\n          {{ offer.description }}\n        </li>\n      </ul>\n      <div class=\"error\" *ngIf=\"errorMessage\">{{errorMessage}}</div>\n      ",
-                        styles: ['.error {color:red;}'],
+                        selector: 'my-offer-detail',
+                        templateUrl: "app/views/offer-detail.component.html",
+                        style: "",
                         providers: [offer_service_1.OfferService]
                     }), 
-                    __metadata('design:paramtypes', [offer_service_1.OfferService, router_1.Router])
-                ], OfferListComponent);
-                return OfferListComponent;
+                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, offer_service_1.OfferService])
+                ], OfferDetailComponent);
+                return OfferDetailComponent;
             }());
-            exports_1("OfferListComponent", OfferListComponent);
+            exports_1("OfferDetailComponent", OfferDetailComponent);
         }
     }
 });
-//# sourceMappingURL=offer-list.component.js.map
+//# sourceMappingURL=offer-detail.component.js.map
